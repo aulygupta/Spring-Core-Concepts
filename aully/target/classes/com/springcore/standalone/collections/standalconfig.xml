@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+  http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd">
+ 
+ <util:list list-class="java.util.LinkedList" id="bestfriends">
+ <value>Ajay</value>
+ <value>Vijay</value>
+ <value>Ravi</value>
+ <value>Rohit</value>
+ </util:list>
+ 
+ <util:map map-class="java.util.TreeMap" id="cou">
+ <entry key="java" value="1 month"></entry>
+  <entry key="python" value="2 month"></entry>
+   <entry key="sql" value="1.5 month"></entry>
+ </util:map>
+ 
+ <util:properties id="prop">
+ <prop key="drivername">jdbc.spring</prop>
+ <prop key="url">learningsprong.com</prop>
+ <prop key="username">root</prop>
+ <prop key="password">root</prop>
+ </util:properties>
+ 
+ <bean class="com.springcore.standalone.collections.Person" name="person1">
+ <property name="friends" ref="bestfriends"></property>
+ <property name="courses" ref="cou"></property>
+ <property name="proper" ref="prop"></property>
+ </bean>
+ 
+ 
+ 
+ 
+ </beans>
